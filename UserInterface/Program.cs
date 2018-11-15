@@ -11,17 +11,19 @@ namespace UserInterface
             // Create an instance of the Player class
             Player player = new Player();
 
-            // Set the player variables
+            // Set the player attributes
             player.CurrentHealthPoints = 10;
-            player.MaxHealthPoints = 10;
-            player.Gold = 0;
             player.ExperiencePoints = 0;
+            player.Gold = 0;
             player.Level = 1;
+            player.MaxHealthPoints = 10;
+            player.Name = "Leydin";
+
 
 
             Console.WriteLine("WELCOME TO AMORO");
 
-            Console.WriteLine($"PLAYER: Adam\n" +
+            Console.WriteLine($"PLAYER: {player.Name}\n" +
                               $"LEVEL:  {player.Level}\n" +
                               $"HP:     {player.CurrentHealthPoints} / {player.MaxHealthPoints}\n" +
                               $"GOLD:   {player.Gold}\n" +

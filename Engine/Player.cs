@@ -12,6 +12,6 @@ namespace Engine
         public int Gold { get; set; }
         public int Level { get; set; }
         public int MaxHealthPoints { get; set; }
-        public string PlayerName { get; set; }
+        public string Name { get; set; }
     }
 }
