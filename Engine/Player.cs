@@ -7,10 +7,10 @@ namespace Engine
     public class Player
     {
         // Declare public player variables that will be displayed on the screen.
-        public int CurrentHP { get; set; }
-        public int MaxHP { get; set; }
-        public int Gold { get; set; }
-        public int XP { get; set; }
-        public int Level { get; set; }
+        public int currentHP { get; set; }
+        public int maxHP { get; set; }
+        public int gold { get; set; }
+        public int xp { get; set; }
+        public int level { get; set; }
     }
 }
