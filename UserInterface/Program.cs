@@ -19,7 +19,8 @@ namespace UserInterface
             player.Level = 1;
 
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("WELCOME TO AMORO");
+            Console.WriteLine($"PLAYER STATS: CURRENT HP {player.CurrentHealthPoints}");
 
             Console.ReadLine();
         }
