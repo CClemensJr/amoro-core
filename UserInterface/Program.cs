@@ -20,7 +20,12 @@ namespace UserInterface
 
 
             Console.WriteLine("WELCOME TO AMORO");
-            Console.WriteLine($"PLAYER STATS: CURRENT HP {player.CurrentHealthPoints}");
+
+            Console.WriteLine($"PLAYER: Adam\n" +
+                              $"LEVEL:  {player.Level}\n" +
+                              $"HP:     {player.CurrentHealthPoints} / {player.MaxHealthPoints}\n" +
+                              $"GOLD:   {player.Gold}\n" +
+                              $"XP:     {player.ExperiencePoints}\n");
 
             Console.ReadLine();
         }
