@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Engine
 {
-    class Weapon
+    public class Weapon
     {
     }
 }
