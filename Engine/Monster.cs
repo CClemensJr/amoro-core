@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Engine
 {
-    public class Monster
+    public class Monster: LivingBeing
     {
         public int ID { get; set; }
         public string Name { get; set; }
