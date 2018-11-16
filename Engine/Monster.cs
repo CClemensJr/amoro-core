@@ -11,7 +11,7 @@ namespace Engine
         public int MaxHealthPoints { get; set; }
         public int CurrentHealthPoints { get; set; }
         public int MaxDamage { get; set; }
-        public int ExperiencePointsOnKill { get; set; }
-        public int GoldOnKill { get; set; }
+        public int ExperienceReward { get; set; }
+        public int FinancialReward { get; set; }
     }
 }
