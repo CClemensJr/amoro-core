@@ -26,7 +26,7 @@ namespace UserInterface
             Console.WriteLine($"PLAYER: {player.Name}\n" +
                               $"LEVEL:  {player.Level}\n" +
                               $"HP:     {player.CurrentHealthPoints} / {player.MaxHealthPoints}\n" +
-                              $"GOLD:   {player.Gold}\n" +
+                              $"GOLD:   {player.Money}\n" +
                               $"XP:     {player.ExperiencePoints}\n");
 
             Console.ReadLine();
