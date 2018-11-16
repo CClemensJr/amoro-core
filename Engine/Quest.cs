@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Engine
 {
-    class Quest
+    public class Quest
     {
     }
 }
