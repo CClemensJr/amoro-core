@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Engine
 {
-    public class Player
+    public class Player: LivingBeing
     {
         // Declare public player attributes that will be displayed on the screen.
         public int CurrentHealthPoints { get; set; }

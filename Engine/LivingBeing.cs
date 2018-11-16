@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Engine
 {
-    class LivingBeing
+    public class LivingBeing
     {
+
     }
 }
