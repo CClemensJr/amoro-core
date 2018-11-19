@@ -33,6 +33,7 @@ namespace UserInterface
                               $"XP:     {player.ExperiencePoints}\n");
 
             Console.WriteLine($"Current Location: {location.Name} - {location.Description}");
+            Console.WriteLine($"Current Quest:    {quest.Name} - {quest.Details}. Reward: {quest.ExperienceReward}xp and {quest.FinancialReward} schmoney");
 
 
             Console.ReadLine();
