@@ -20,6 +20,7 @@ namespace UserInterface
             player.Name = "Leydin";
 
 
+            Location location = new Location(1, "Home", "This is your tidy spot in the village of Amoro");
 
             Console.WriteLine("WELCOME TO AMORO");
 
@@ -28,6 +29,8 @@ namespace UserInterface
                               $"HP:     {player.CurrentHealthPoints} / {player.MaxHealthPoints}\n" +
                               $"GOLD:   {player.Money}\n" +
                               $"XP:     {player.ExperiencePoints}\n");
+
+            Console.WriteLine($"Current Location: {location.Name} - {location.Description}");
 
             Console.ReadLine();
         }
