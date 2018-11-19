@@ -20,7 +20,9 @@ namespace UserInterface
             player.Name = "Leydin";
 
 
+            // Construct class objects
             Location location = new Location(1, "Home", "This is your tidy spot in the village of Amoro");
+            Quest quest = new Quest(1, "Do The Dishes", "Every great adventurer has their humble beginnings and you are no different. Your dishes have been piling up for weeks so please get those done as soon as possible so that a monster doesn't spawn from them, ok? I mean, seriously, who let's their dishes go on for so long. Thats disgusting. You should know better.", 10, 10);
 
             Console.WriteLine("WELCOME TO AMORO");
 
@@ -31,6 +33,7 @@ namespace UserInterface
                               $"XP:     {player.ExperiencePoints}\n");
 
             Console.WriteLine($"Current Location: {location.Name} - {location.Description}");
+
 
             Console.ReadLine();
         }
