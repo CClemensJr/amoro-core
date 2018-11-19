@@ -14,7 +14,7 @@ namespace UserInterface
             // Set the player attributes
             player.CurrentHealthPoints = 10;
             player.ExperiencePoints = 0;
-            player.Gold = 0;
+            player.Money = 0;
             player.Level = 1;
             player.MaxHealthPoints = 10;
             player.Name = "Leydin";
@@ -26,7 +26,7 @@ namespace UserInterface
             Console.WriteLine($"PLAYER: {player.Name}\n" +
                               $"LEVEL:  {player.Level}\n" +
                               $"HP:     {player.CurrentHealthPoints} / {player.MaxHealthPoints}\n" +
-                              $"GOLD:   {player.Gold}\n" +
+                              $"GOLD:   {player.Money}\n" +
                               $"XP:     {player.ExperiencePoints}\n");
 
             Console.ReadLine();
