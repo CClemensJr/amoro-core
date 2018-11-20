@@ -9,18 +9,19 @@ namespace UserInterface
         {
             //PLAYER OBJECT CONSTRUCTOR
             // Create an instance of the Player class
-            Player player = new Player();
+            //Player player = new Player();
 
             // Set the player attributes
-            player.CurrentHealthPoints = 10;
-            player.ExperiencePoints = 0;
-            player.Money = 0;
-            player.Level = 1;
-            player.MaxHealthPoints = 10;
-            player.Name = "Leydin";
+            //player.CurrentHealthPoints = 10;
+            //player.ExperiencePoints = 0;
+            //player.Money = 0;
+            //player.Level = 1;
+            //player.MaxHealthPoints = 10;
+            //player.Name = "Leydin";
 
 
             // Construct class objects
+            Player player = new Player(1, "Leydin", 10, 10, 0, 0, 1);
             Location location = new Location(1, "Home", "This is your tidy spot in the village of Amoro");
             Quest quest = new Quest(1, "Do The Dishes", "Every great adventurer has their humble beginnings and you are no different. Your dishes have been piling up for weeks so please get those done as soon as possible so that a monster doesn't spawn from them, ok? I mean, seriously, who let's their dishes go on for so long. Thats disgusting. You should know better.", 10, 10);
             HealthPotion pot = new HealthPotion(1, "Pot", "Pots", 10);
