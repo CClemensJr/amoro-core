@@ -8,7 +8,7 @@ namespace UserInterface
         static void Main(string[] args)
         {
             // Construct class objects
-            Player player = new Player(1, "Leydin", 10, 10, 0, 0, 1);
+            Player player = new Player("Leydin", 10, 10, 0, 0, 1);
             Location location = new Location(1, "Home", "This is your tidy spot in the village of Amoro");
             Quest quest = new Quest(1, "Do The Dishes", "Every great adventurer has their humble beginnings and you are no different. Your dishes have been piling up for weeks so please get those done as soon as possible so that a monster doesn't spawn from them, ok? I mean, seriously, who let's their dishes go on for so long. Thats disgusting. You should know better.", 10, 10);
             HealthPotion pot = new HealthPotion(1, "Pot", "Pots", 10);

@@ -11,7 +11,7 @@ namespace Engine
         public int CurrentHealthPoints { get; set; }
         public int MaxHealthPoints { get; set; }
 
-        public LivingBeing(int id, string name, int currentHP, int maxHP)
+        public LivingBeing(string name, int currentHP, int maxHP, int id = 0)
         {
             ID = id;
             Name = name;

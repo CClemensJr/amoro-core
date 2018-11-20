@@ -10,7 +10,7 @@ namespace Engine
         public int ExperienceReward { get; set; }
         public int FinancialReward { get; set; }
 
-        public Monster(int id, string name, int currentHP, int maxHP, int maxDmg, int xp, int money) : base(id, name, currentHP, maxHP)
+        public Monster(int id, string name, int currentHP, int maxHP, int maxDmg, int xp, int money) : base(name, currentHP, maxHP, id)
         {
             MaxDamage = maxDmg;
             ExperienceReward = xp;
