@@ -8,7 +8,7 @@ namespace Engine
     {
         public int HealAmount { get; set; }
 
-        public HealthPotion(int healAmount) : base(id, name, names)
+        public HealthPotion(int id, string name, string names, int healAmount) : base(id, name, names)
         {
             HealAmount = healAmount;
         }
