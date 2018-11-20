@@ -17,12 +17,14 @@ namespace Engine
         public Location SouthOfHere { get; set; }
         public Location WestOfHere { get; set; }
 
-        public Location(int id, string name, string description)
+        public Location(int id, string name, string description, Item entryItem = null, Quest questsHere = null, Monster monstersHere = null)
         {
             ID = id;
             Name = name;
             Description = description;
-
+            ItemsToEnterHere = entryItem;
+            QuestsHere = questsHere;
+            MonstersHere = monstersHere;
         }
     }
 
