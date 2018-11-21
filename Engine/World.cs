@@ -23,5 +23,10 @@ namespace Engine
         public const int ITEM_ID_SPIDER_FANG = 8;
         public const int ITEM_ID_SPIDER_SILK = 9;
         public const int ITEM_ID_ADVENTURER_PASS = 10;
+
+        // Monster instances
+        public const int MONSTER_ID_RAT = 1;
+        public const int MONSTER_ID_SNAKE = 2;
+        public const int MONSTER_ID_GIANT_SPIDER = 3;
     }
 }
