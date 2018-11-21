@@ -53,5 +53,25 @@ namespace Engine
             PopulateLocations();
         }
 
+        private static void PopulateItems()
+        {
+
+        }
+
+        private static void PopulateMonsters()
+        {
+
+        }
+
+        private static void PopulateQuests()
+        {
+
+        }
+
+        private static void PopulateLocations()
+        {
+
+        }
+
     }
 }
