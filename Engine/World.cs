@@ -12,7 +12,7 @@ namespace Engine
         public static readonly List<Quest> Quests = new List<Quest>();
         public static readonly List<Location> Locations = new List<Location>();
 
-        // Item instances
+        // Item instance ids
         public const int ITEM_ID_RUSTY_SWORD = 1;
         public const int ITEM_ID_RAT_TAIL = 2;
         public const int ITEM_ID_PIECE_OF_FUR = 3;
@@ -24,9 +24,14 @@ namespace Engine
         public const int ITEM_ID_SPIDER_SILK = 9;
         public const int ITEM_ID_ADVENTURER_PASS = 10;
 
-        // Monster instances
+        // Monster instance ids
         public const int MONSTER_ID_RAT = 1;
         public const int MONSTER_ID_SNAKE = 2;
         public const int MONSTER_ID_GIANT_SPIDER = 3;
+
+        // Quest instance ids
+        public const int QUEST_ID_CLEAR_ALCHEMIST_GARDEN = 1;
+        public const int QUEST_ID_CLEAR_FARMERS_FIELD = 2;
+
     }
 }
