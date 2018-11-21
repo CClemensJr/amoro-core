@@ -33,5 +33,16 @@ namespace Engine
         public const int QUEST_ID_CLEAR_ALCHEMIST_GARDEN = 1;
         public const int QUEST_ID_CLEAR_FARMERS_FIELD = 2;
 
+        // Location instance ids
+        public const int LOCATION_ID_HOME = 1;
+        public const int LOCATION_ID_TOWN_SQUARE = 2;
+        public const int LOCATION_ID_GUARD_POST = 3;
+        public const int LOCATION_ID_ALCHEMIST_HUT = 4;
+        public const int LOCATION_ID_ALCHEMISTS_GARDEN = 5;
+        public const int LOCATION_ID_FARMHOUSE = 6;
+        public const int LOCATION_ID_FARM_FIELD = 7;
+        public const int LOCATION_ID_BRIDGE = 8;
+        public const int LOCATION_ID_SPIDER_FIELD = 9;
+
     }
 }
