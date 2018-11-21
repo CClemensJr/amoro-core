@@ -44,5 +44,14 @@ namespace Engine
         public const int LOCATION_ID_BRIDGE = 8;
         public const int LOCATION_ID_SPIDER_FIELD = 9;
 
+        
+        static World()
+        {
+            PopulateItems();
+            PopulateMonsters();
+            PopulateQuests();
+            PopulateLocations();
+        }
+
     }
 }
