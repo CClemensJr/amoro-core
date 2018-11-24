@@ -8,7 +8,7 @@ namespace Engine
     {
         // Lists used to store all Item, Monster, Quest, and Location instances
         public static readonly List<Item> Items = new List<Item>();
-        public static readonly List<Monster> Monster = new List<Monster>();
+        public static readonly List<Monster> Monsters = new List<Monster>();
         public static readonly List<Quest> Quests = new List<Quest>();
         public static readonly List<Location> Locations = new List<Location>();
 
