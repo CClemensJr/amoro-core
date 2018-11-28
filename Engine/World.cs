@@ -91,8 +91,30 @@ namespace Engine
 
         private static void PopulateQuests()
         {
+            Quest clearAlchemistGarden = new Quest(QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
+                    "Clear the alchemist's garden.",
+                    "Kill rats in the alchemist's garden and bring back 3 rat tails. You will receive a healing potion and 10 shmoney.",
+                    20,
+                    10
+                );
 
-        }
+            clearAlchemistGarden.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_RAT_TAIL), 3));
+            clearAlchemistGarden.ItemReward = ItemByID(ITEM_ID_HEALTH_POTION);
+
+            Quest clearFarmersField = new Quest(
+                    QUEST_ID_CLEAR_FARMERS_FIELD,
+                    "Clear the farmer's field",
+                    "Kill snakes in the farmer's field and bring back 3 snake fangs. You will receive an Adventurer Pass and 20 shmoney",
+                    20,
+                    20
+                );
+
+            clearFarmersField.QuestCompletionItem.Add(new QuestCompletionItem(ItemByID(ITEM_ID_SNAKE_FANG), 3));
+            clearFarmersField.RewardItem = ItemByID(ITEM_ID_ADVENTURER_PASS);
+
+            Quests.Add(clearAlchemistGarden);
+            Quests.Add(clearFarmersField);
+;        }
 
         private static void PopulateLocations()
         {
