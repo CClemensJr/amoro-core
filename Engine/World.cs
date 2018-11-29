@@ -184,5 +184,29 @@ namespace Engine
 
         }
 
+        public static Item ItemByID(int id)
+        {
+            foreach(Item item in Items)
+            {
+                if (item.ID == id) return item;
+            }
+
+            return null;
+        }
+
+        public static Monster MonsterByID(int id)
+        {
+
+        }
+
+        public static Quest QuestByID(int id)
+        {
+
+        }
+
+        public static Location LocationByID(int id)
+        {
+
+        }
     }
 }
