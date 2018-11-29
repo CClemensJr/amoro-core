@@ -37,14 +37,14 @@ namespace Engine
         public const int LOCATION_ID_HOME = 1;
         public const int LOCATION_ID_TOWN_SQUARE = 2;
         public const int LOCATION_ID_GUARD_POST = 3;
-        public const int LOCATION_ID_ALCHEMIST_HUT = 4;
+        public const int LOCATION_ID_ALCHEMISTS_HUT = 4;
         public const int LOCATION_ID_ALCHEMISTS_GARDEN = 5;
         public const int LOCATION_ID_FARMHOUSE = 6;
         public const int LOCATION_ID_FARM_FIELD = 7;
         public const int LOCATION_ID_BRIDGE = 8;
         public const int LOCATION_ID_SPIDER_FIELD = 9;
 
-        
+        // Construct the world objects
         static World()
         {
             PopulateItems();
@@ -53,6 +53,7 @@ namespace Engine
             PopulateLocations();
         }
 
+        // Construct Items
         private static void PopulateItems()
         {
             // Add each item to the Items list. Seems really inefficient, will likely want to store the item info in an array then use a loop to add each item.
@@ -69,6 +70,7 @@ namespace Engine
 
         }
 
+        // Construct Monsters
         private static void PopulateMonsters()
         {
             Monster rat = new Monster(MONSTER_ID_RAT, "Rat", 5, 3, 10, 3, 3);
@@ -89,17 +91,18 @@ namespace Engine
 
         }
 
+        // Construct Quests
         private static void PopulateQuests()
         {
-            Quest clearAlchemistGarden = new Quest(QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
+            Quest clearAlchemistsGarden = new Quest(QUEST_ID_CLEAR_ALCHEMIST_GARDEN,
                     "Clear the alchemist's garden.",
                     "Kill rats in the alchemist's garden and bring back 3 rat tails. You will receive a healing potion and 10 shmoney.",
                     20,
                     10
                 );
 
-            clearAlchemistGarden.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_RAT_TAIL), 3));
-            clearAlchemistGarden.ItemReward = ItemByID(ITEM_ID_HEALTH_POTION);
+            clearAlchemistsGarden.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_RAT_TAIL), 3));
+            clearAlchemistsGarden.ItemReward = ItemByID(ITEM_ID_HEALTH_POTION);
 
             Quest clearFarmersField = new Quest(
                     QUEST_ID_CLEAR_FARMERS_FIELD,
@@ -116,8 +119,68 @@ namespace Engine
             Quests.Add(clearFarmersField);
 ;        }
 
+        // Construct Locations
         private static void PopulateLocations()
         {
+            Location home = new Location(LOCATION_ID_HOME, "Home", "This is your house. It smells weird");
+
+            Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "This is where everyone comes to do their things. There are vendors, a bulletin board, and a fountain.");
+
+            // alchemistHut
+            Location alchemistsHut = new Location(LOCATION_ID_ALCHEMIST_HUT, "Alchemist's Hut", "This is where you can buy your potions and such.");
+
+            // alchemistsGarden
+            Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's Garden", "The alchemist plants and harvests his herbs here.");
+
+            // farmhouse
+            Location farmhouse = new Location(LOCATION_ID_FARMHOUSE, "Farm house", "A farmhouse on the edge of town");
+
+            // farmersField
+            Location farmersField = new Location(LOCATION_ID_FARM_FIELD, "Farmer's field", "There a bunch of plants and animals here.");
+
+            // guardPost
+            Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "The town guard post keeps an eye on the forest but is rarely manned these days.");
+
+            // bridge
+            Location bridge = new Location(LOCATION_ID_BRIDGE, "The bridge", "The bridge leads out of town and into the forest.");
+
+            // spiderField
+            Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Spider field", "Supposedly full of giant spiders, most believe this to be a wive's tale yet no one wants to go out for themselves.");
+
+
+            // Link the locations together by setting the directional locations
+            home.SouthOfHere = townSquare;
+
+            townSquare.NorthOfHere = home;
+            townSquare.EastOfHere = guardPost;
+            townSquare.SouthOfHere = farmhouse;
+            townSquare.WestOfHere = alchemistsHut;
+
+            alchemistsHut.EastOfHere = townSquare;
+            alchemistsHut.WestOfHere = alchemistsGarden;
+
+            farmhouse.NorthOfHere = townSquare;
+            farmhouse.SouthOfHere = farmersField;
+
+            guardPost.WestOfHere = townSquare;
+            guardPost.EastOfHere = bridge;
+
+            bridge.WestOfHere = guardPost;
+            bridge.EastOfHere = spiderField;
+
+            spiderField.WestOfHere = bridge;
+
+
+            // Add the locations to the static list.
+            Locations.Add(home);
+            Locations.Add(townSquare);
+            Locations.Add(guardPost);
+            Locations.Add(alchemistsHut);
+            Locations.Add(alchemistsGarden);
+            Locations.Add(farmhouse);
+            Locations.Add(farmersField);
+            Locations.Add(bridge);
+            Locations.Add(spiderField);
 
         }
 
