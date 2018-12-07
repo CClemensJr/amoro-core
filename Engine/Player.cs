@@ -16,11 +16,13 @@ namespace Engine
         public List<PlayerQuest> Quests { get; set; }
 
 
-        public Player(string name, int currentHP, int maxHP, int xp, int money, int lvl) : base(name, currentHP, maxHP)
+        public Player(string name, Location loc, int currentHP, int maxHP, int xp, int money, int lvl) : base(name, currentHP, maxHP)
         {
             ExperiencePoints = xp;
             Money = money;
             Level = lvl;
+
+            CurrentLocation = loc;
 
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();

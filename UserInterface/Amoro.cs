@@ -10,47 +10,68 @@ namespace UserInterface
         private Monster _currentMonster;
 
         static void Main(string[] args)
-        {
-            // Construct class objects
-            //Player player = new Player("Leydin", 10, 10, 0, 0, 1);
-            //Location location = new Location(1, "Home", "This is your tidy spot in the village of Amoro");
-            //Quest quest = new Quest(1, "Do The Dishes", "Every great adventurer has their humble beginnings and you are no different. Your dishes have been piling up for weeks so please get those done as soon as possible so that a monster doesn't spawn from them, ok? I mean, seriously, who let's their dishes go on for so long. Thats disgusting. You should know better.", 10, 10);
-            //HealthPotion pot = new HealthPotion(1, "Pot", "Pots", 10);
-            //Weapon knife = new Weapon(1, "rusty knife", "rusty knives", 2, 5);
-            //Monster mouse = new Monster(1, "A cute little mouse", 1, 1, 2, 5, 5);
-            
+        {  
             // Create an instance of the Amoro class so that Main can make calls to non-static methods
             Amoro a = new Amoro();
 
-            a.initializePlayer();
-
-
-            // Screen Output
-
-            Console.WriteLine("WELCOME TO AMORO");
-
-            Console.WriteLine($"PLAYER: {a._player.Name}\n" +
-                              $"LEVEL:  {a._player.Level}\n" +
-                              $"HP:     {a._player.CurrentHealthPoints} / {a._player.MaxHealthPoints}\n" +
-                              $"GOLD:   {a._player.Money}\n" +
-                              $"XP:     {a._player.ExperiencePoints}\n");
-
-            //Console.WriteLine($"Current Location: {location.Name} - {location.Description}");
-            //Console.WriteLine($"Current Quest:    {quest.Name} - {quest.Details}. Reward: {quest.ExperienceReward}xp and {quest.FinancialReward} schmoney");
-            //Console.WriteLine($"Current Item:     {pot.Name} that heals for {pot.HealAmount}");
-            //Console.WriteLine($"Current Weapon:   {knife.Name}. Damage Dealt: {knife.MinDamage} - {knife.MaxDamage}");
-            //Console.WriteLine($"Current Foe:      {mouse.Name}.");
+            // Set up the console
+            a.userInterface();
 
             Console.ReadLine();
         }
 
-        public void initializePlayer()
+        public void userInterface()
         {
-            _player = new Player("Leydin", 10, 10, 0, 0, 1);
-            MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+            Console.WriteLine("**************************************************************\n" +
+                              "****                                                      ****\n" +
+                              "****                     WELCOME TO AMORO                 ****\n" +
+                              "****                                                      ****\n" +
+                              "**************************************************************\n");
+
+            initializeGame();
+            showPlayerDetails();
+            showPlayerInventory();
+        }
+
+        public void createSections(string text, int rows, int spaceAbove, int spaceBelow)
+        {
+
+        }
+
+        public void initializeGame()
+        {
+            _player = new Player("Leydin", World.LocationByID(World.LOCATION_ID_HOME), 10, 10, 0, 0, 1);
             _player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1));
         }
 
+        public void showPlayerDetails()
+        {
+            Console.WriteLine( "**************************************************************\n" +
+                              $"**** LOCATION: {_player.CurrentLocation.Name} - {_player.CurrentLocation.Description}                                 ****\n" +
+                               "**************************************************************\n");
+
+            Console.WriteLine($"LOCATION:   {_player.CurrentLocation.Name}\n" +
+                              $"PLAYER:     {_player.Name}\n" +
+                              $"LEVEL:      {_player.Level}\n" +
+                              $"HP:         {_player.CurrentHealthPoints} / {_player.MaxHealthPoints}\n" +
+                              $"SCHMONEY:   {_player.Money}\n" +
+                              $"XP:         {_player.ExperiencePoints}\n");
+        }
+
+        public void showPlayerInventory()
+        {
+            Console.WriteLine("Inventory");
+
+            foreach(InventoryItem item in _player.Inventory)
+            {
+                Console.WriteLine(item.Details.Name);
+            }
+        }
+
+        public void MoveTo(Location newLocation)
+        {
+            _player.CurrentLocation = newLocation;
+        }
 
     }
 }
