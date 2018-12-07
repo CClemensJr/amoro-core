@@ -126,25 +126,18 @@ namespace Engine
 
             Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "This is where everyone comes to do their things. There are vendors, a bulletin board, and a fountain.");
 
-            // alchemistHut
             Location alchemistsHut = new Location(LOCATION_ID_ALCHEMISTS_HUT, "Alchemist's Hut", "This is where you can buy your potions and such.");
 
-            // alchemistsGarden
             Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's Garden", "The alchemist plants and harvests his herbs here.");
 
-            // farmhouse
             Location farmhouse = new Location(LOCATION_ID_FARMHOUSE, "Farm house", "A farmhouse on the edge of town");
 
-            // farmersField
             Location farmersField = new Location(LOCATION_ID_FARM_FIELD, "Farmer's field", "There a bunch of plants and animals here.");
 
-            // guardPost
             Location guardPost = new Location(LOCATION_ID_GUARD_POST, "Guard post", "The town guard post keeps an eye on the forest but is rarely manned these days.");
 
-            // bridge
             Location bridge = new Location(LOCATION_ID_BRIDGE, "The bridge", "The bridge leads out of town and into the forest.");
 
-            // spiderField
             Location spiderField = new Location(LOCATION_ID_SPIDER_FIELD, "Spider field", "Supposedly full of giant spiders, most believe this to be a wive's tale yet no one wants to go out for themselves.");
 
 

@@ -15,6 +15,7 @@ namespace Engine
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
+
         public Player(string name, int currentHP, int maxHP, int xp, int money, int lvl) : base(name, currentHP, maxHP)
         {
             ExperiencePoints = xp;
