@@ -196,17 +196,32 @@ namespace Engine
 
         public static Monster MonsterByID(int id)
         {
+            foreach(Monster monster in Monsters)
+            {
+                if (monster.ID == id) return monster;
+            }
 
+            return null;
         }
 
         public static Quest QuestByID(int id)
         {
+            foreach(Quest quest in Quests)
+            {
+                if (quest.ID == id) return quest;
+            }
 
+            return null;
         }
 
         public static Location LocationByID(int id)
         {
+            foreach(Location location in Locations)
+            {
+                if (location.ID == id) return location;
+            }
 
+            return null;
         }
     }
 }
