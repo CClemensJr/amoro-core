@@ -112,10 +112,10 @@ namespace Engine
                     20
                 );
 
-            clearFarmersField.QuestCompletionItem.Add(new QuestCompletionItem(ItemByID(ITEM_ID_SNAKE_FANG), 3));
-            clearFarmersField.RewardItem = ItemByID(ITEM_ID_ADVENTURER_PASS);
+            clearFarmersField.QuestCompletionItems.Add(new QuestCompletionItem(ItemByID(ITEM_ID_SNAKE_FANG), 3));
+            clearFarmersField.ItemReward = ItemByID(ITEM_ID_ADVENTURER_PASS);
 
-            Quests.Add(clearAlchemistGarden);
+            Quests.Add(clearAlchemistsGarden);
             Quests.Add(clearFarmersField);
 ;        }
 
@@ -127,7 +127,7 @@ namespace Engine
             Location townSquare = new Location(LOCATION_ID_TOWN_SQUARE, "Town square", "This is where everyone comes to do their things. There are vendors, a bulletin board, and a fountain.");
 
             // alchemistHut
-            Location alchemistsHut = new Location(LOCATION_ID_ALCHEMIST_HUT, "Alchemist's Hut", "This is where you can buy your potions and such.");
+            Location alchemistsHut = new Location(LOCATION_ID_ALCHEMISTS_HUT, "Alchemist's Hut", "This is where you can buy your potions and such.");
 
             // alchemistsGarden
             Location alchemistsGarden = new Location(LOCATION_ID_ALCHEMISTS_GARDEN, "Alchemist's Garden", "The alchemist plants and harvests his herbs here.");
