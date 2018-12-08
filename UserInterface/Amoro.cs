@@ -22,20 +22,40 @@ namespace UserInterface
 
         public void userInterface()
         {
-            Console.WriteLine("**************************************************************\n" +
-                              "****                                                      ****\n" +
-                              "****                     WELCOME TO AMORO                 ****\n" +
-                              "****                                                      ****\n" +
-                              "**************************************************************\n");
-
+            createSection("WELCOME TO AMORO", 5, 1);
             initializeGame();
             showPlayerDetails();
             showPlayerInventory();
         }
 
-        public void createSections(string text, int rows, int spaceAbove, int spaceBelow)
+        public void createSection(string text, int rows, int spacing)
         {
+            int screenWidth = Console.WindowWidth;
+            int centerText = ((screenWidth) / 2) + ((text.Length) / 2);
+            string border = " ";
 
+            for (int i = 0; i < (screenWidth - 2); i++)
+            {
+                border += "*";
+            }
+
+            for (int i = 0; i < rows; i++)
+            {
+                if (i == 0 || i == rows - 1)
+                {
+                    Console.WriteLine(String.Format("{0," + (screenWidth - 2) + "}", border));
+                }
+                else if (i == (rows / 2))
+                {
+                    Console.WriteLine(String.Format("{0," + centerText + "}", text));
+                }
+                else
+                {
+                    Console.WriteLine(String.Format("{0,1} {1," + (screenWidth - 3) + "}", "*", "*"));
+                }
+
+            }
+            
         }
 
         public void initializeGame()
