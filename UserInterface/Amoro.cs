@@ -20,7 +20,8 @@ namespace UserInterface
             // Render in console window
             a.userInterface();
 
-            Console.ReadLine();
+            // Handle input from the player
+            a.acceptPlayerInput();
         }
 
 
@@ -113,8 +114,17 @@ namespace UserInterface
         //
         // USER INPUT
         //
-        public void acceptPlayerInput(string command)
+        public void acceptPlayerInput()
         {
+
+            string input = Console.ReadLine();
+
+            while (input != "QUIT")
+            {
+                Console.WriteLine("Please type QUIT to quit the game.");
+
+                input = Console.ReadLine();
+            }
 
         }
 
@@ -125,6 +135,32 @@ namespace UserInterface
         //
         public void MoveTo(Location newLocation)
         {
+            // If the new location requires items to enter
+            if (newLocation.ItemsToEnterHere != null)
+            {
+                // Check if the player has the items in the inventory
+                bool playerHasRequiredItems = false;
+
+                foreach(InventoryItem item in _player.Inventory)
+                {
+                    if (item.Details.ID == newLocation.ItemsToEnterHere.ID)
+                    {
+                        // If item is found exit the loop
+                        playerHasRequiredItems = true;
+
+                        break;
+                    }
+                }
+
+                // If the player doesn't have the items
+                if (!playerHasRequiredItems)
+                {
+                    Console.WriteLine($"You must have a {newLocation.ItemsToEnterHere.Name} to enter this location. {Environment.NewLine}");
+                }
+
+
+            }
+
             _player.CurrentLocation = newLocation;
         }
 
